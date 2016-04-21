@@ -1,0 +1,15 @@
+<!-- Bootstrap Core JavaScript -->
+<script src="${webPath}/static/script/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="${webPath}/static/script/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="${webPath}/static/script/jquery.dataTables.min.js"></script>
+<script src="${webPath}/static/script/dataTables.bootstrap.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="${webPath}/static/script/theme.js"></script>
+
+</body>
+
+</html>

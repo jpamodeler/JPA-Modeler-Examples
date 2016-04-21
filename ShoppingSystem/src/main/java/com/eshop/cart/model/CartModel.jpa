@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="com.eshop.cart.model" v="1.5.1" thm="PMacColorScheme" xs="false" id="_14583932083231" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" sm="false" abs="false" class="Customer" visibile="true" minimized="false" rootElement="_14583932083231" id="_1458393358018">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="firstName" id="_14583936007958">
+                <bv>
+                    <nn/>
+                    <si mi="5" ma="50" m="User's first name must contain between 5 and 50 characters"/>
+                </bv>
+                <jpa:column name="FNAME" unique="false" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="lastName" id="_14583936973409">
+                <bv/>
+                <jpa:column name="LNAME" unique="false" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="age" id="_14610365510577">
+                <bv/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="address" id="_14610365616708">
+                <bv/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="mobileNumber" id="_146103677768413">
+                <bv/>
+            </basic>
+            <one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1458393890315" visibile="true" name="orders" id="_145839403470917">
+                <jpa:join-column name="CUSTOMER_ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </one-to-many>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_14583935553007">
+                <bv/>
+                <jpa:generated-value/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Product" visibile="true" minimized="false" rootElement="_14583932083231" id="_1458393708875">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="name" id="_146103721398516">
+                <bv/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="description" id="_145839372876212">
+                <bv/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="listPrice" id="_145839372898113">
+                <bv/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="sellingPrice" id="_14610366503119">
+                <bv/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="specialPrice" id="_146103670543511">
+                <bv/>
+            </basic>
+            <basic attribute-type="boolean" visibile="true" name="freeDelivery" id="_146103667199610">
+                <bv/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="quantityAvailabile" id="_146103674524012">
+                <bv/>
+            </basic>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_145839372544611">
+                <bv/>
+                <jpa:generated-value/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="ProductOrder" visibile="true" minimized="false" rootElement="_14583932083231" id="_1458393890315">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="amount" id="_145839391287116">
+                <bv/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="deliveryLocation" id="_14610365391986">
+                <bv/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="deliveryTime" id="_146103683473314">
+                <bv/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="promoCode" id="_146103687378115">
+                <bv/>
+            </basic>
+            <many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1458393708875" visibile="true" name="products" id="_145839409810618">
+                <join-table name="PRODUCTORDER_PRODUCT"/>
+            </many-to-many>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_145839391151615">
+                <bv/>
+                <jpa:generated-value/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="PRO_ORDER"/>
+    </jpa:entity>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Collection</ct>
+        <db u="jdbc:mysql://localhost:3306/sample_db" n="root" p="root" d="com.mysql.jdbc.Driver"/>
+    </jpa:c>
+    <jpa:diagram id="_14583932083232">
+        <plane elementRef="_14583932083231" id="_14583932083233_p">
+            <shape elementRef="_1458393358018">
+                <Bounds x="14.0" y="11.0" width="152.0" height="210.0"/>
+            </shape>
+            <shape elementRef="_1458393708875">
+                <Bounds x="521.0" y="11.0" width="144.0" height="218.0"/>
+            </shape>
+            <shape elementRef="_1458393890315">
+                <Bounds x="245.0" y="124.0" width="174.0" height="189.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
